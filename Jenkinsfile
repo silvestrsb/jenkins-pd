@@ -21,6 +21,9 @@ pipeline {
         stage('tests-on-dev') {
             steps {
                 echo 'Testing on dev'
+                bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
+                bat "npm install"
+                bat "npm run greetings greetings_dev"
             }
         }
         stage('deploy-to-staging') {
@@ -34,6 +37,9 @@ pipeline {
         stage('tests-on-staging') {
             steps {
                 echo 'Testing on staging'
+                bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
+                bat "npm install"
+                bat "npm run greetings greetings_staging"
             }
         }
         stage('deploy-to-preprod') {
@@ -47,6 +53,9 @@ pipeline {
         stage('tests-on-preprod') {
             steps {
                 echo 'Testing on preprod'
+                bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
+                bat "npm install"
+                bat "npm run greetings greetings_preprod"
             }
         }
         stage('deploy-to-prod') {
@@ -60,6 +69,9 @@ pipeline {
         stage('tests-on-prod') {
             steps {
                 echo 'Testing on prod'
+                bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
+                bat "npm install"
+                bat "npm run greetings greetings_prod"
             }
         }
     }
