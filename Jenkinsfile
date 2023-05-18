@@ -27,6 +27,7 @@ pipeline {
             steps {
                 echo 'Deploying to staging'
                 bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
+                bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-staging & EXIT /B 0"
                 bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-staging -- --port 7002"
             }
         }
@@ -39,6 +40,7 @@ pipeline {
             steps {
                 echo 'Deploying to preprod'
                 bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
+                bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-preprod & EXIT /B 0"
                 bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-preprod -- --port 7003"
             }
         }
@@ -51,6 +53,7 @@ pipeline {
             steps {
                 echo 'Deploying to prod'
                 bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
+                bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-prod & EXIT /B 0"
                 bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-prod -- --port 7004"
             }
         }
