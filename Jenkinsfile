@@ -4,47 +4,47 @@ pipeline {
     stages {
         stage('install-pip-deps') {
             steps {
-                echo 'install-pip-deps'
+                echo 'Installing pip dependencies'
             }
         }
         stage('deploy-to-dev') {
             steps {
-                echo 'deploy-to-dev'
+                echo 'Deploying to dev'
             }
         }
         stage('tests-on-dev') {
             steps {
-                echo 'tests-on-dev'
+                echo 'Testing on dev'
             }
         }
         stage('deploy-to-staging') {
             steps {
-                echo 'deploy-to-staging'
+                echo 'Deploying to staging'
             }
         }
         stage('tests-on-staging') {
             steps {
-                echo 'tests-on-staging'
+                echo 'Testing on staging'
             }
         }
         stage('deploy-to-preprod') {
             steps {
-                echo 'deploy-to-preprod'
+                echo 'Deploying to preprod'
             }
         }
         stage('tests-on-preprod') {
             steps {
-                echo 'tests-on-preprod'
+                echo 'Testing on preprod'
             }
         }
         stage('deploy-to-prod') {
             steps {
-                echo 'deploy-to-prod'
+                echo 'Deploying to prod'
             }
         }
         stage('tests-on-prod') {
             steps {
-                echo 'tests-on-prod'
+                echo 'Testing on prod'
             }
         }
     }
