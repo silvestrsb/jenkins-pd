@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Deploying to dev'
                 //bat "git clone https://github.com/mtararujs/python-greetings"
-                bat "pm2 delete greetings-app-dev & set \"errorlevel=0\""
+                bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-dev & set \"errorlevel=0\""
             }
         }
         stage('tests-on-dev') {
