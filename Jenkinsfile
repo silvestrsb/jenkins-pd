@@ -7,7 +7,7 @@ pipeline {
                 echo 'Installing pip dependencies'
                 bat "git clone https://github.com/mtararujs/python-greetings"
                 bat "cd python-greetings && dir"
-                bat "pip install -r requirements.txt"
+                bat "cd python-greetings && pip install -r requirements.txt"
             }
         }
         stage('deploy-to-dev') {
