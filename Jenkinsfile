@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Installing pip dependencies'
                 bat "git clone https://github.com/mtararujs/python-greetings"
-                bat "dir"
+                bat "cd python-greetings && dir"
             }
         }
         stage('deploy-to-dev') {
