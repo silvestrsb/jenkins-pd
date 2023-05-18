@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Testing on dev'
                 bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
-                bat "npm install"
+                bat "C:\\Program Files\\nodejs\\npm install"
                 //bat "cd course-js-api-framework && C:\\Program Files\\nodejs\\npm run greetings greetings_dev"
             }
         }
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 echo 'Testing on staging'
                 bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
-                bat "npm install"
+                bat "C:\\Program Files\\nodejs\\npm install"
                 //bat "cd course-js-api-framework && C:\\Program Files\\nodejs\\npm run greetings greetings_staging"
             }
         }
@@ -54,7 +54,7 @@ pipeline {
             steps {
                 echo 'Testing on preprod'
                 bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
-                bat "npm install"
+                bat "C:\\Program Files\\nodejs\\npm install"
                 //bat "cd course-js-api-framework && C:\\Program Files\\nodejs\\npm run greetings greetings_preprod"
             }
         }
@@ -70,7 +70,7 @@ pipeline {
             steps {
                 echo 'Testing on prod'
                 bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
-                bat "npm install"
+                bat "C:\\Program Files\\nodejs\\npm install"
                 //bat "cd course-js-api-framework && C:\\Program Files\\nodejs\\npm run greetings greetings_prod"
             }
         }
