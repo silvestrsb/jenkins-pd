@@ -77,12 +77,6 @@ pipeline {
     }
 }
 
-def echoDeployEnvironment(String envronment) {
-    echo "Deploying to $environment"
-}
-def echoTestEnvironment(String environment) {
-    echo "Testing on $environment"
-}
 def echoDependencyInstall(String packageManager) {
     echo "Installing $packageManager dependencies"
 }
@@ -94,6 +88,24 @@ def displayDirectoryContent(String directory) {
 }
 def installPipRequirements(String directoryContainingRequirements, String requirementsTextFile) {
     bat "cd $directoryContainingRequirements && pip install -r $requirementsTextFile & EXIT /B 0"
+}
+/* 
+==================================================================================
+Rodas problēmas ar EXIT /B 0 izmantojot tālākos etapos metodes izsaukumus, 
+netiek turpināta pipeline izpilde, bet bez metodēm turpina izpildi
+
+Piemēram:
+- stage('install-pip-deps') - installPipRequirements("python-greetings", "requirements.txt") 
+- Darbojas, ja tālāk netiek izmantoti metodes isaukumi, 
+  bet ja kaut vai deploy-to-dev etapā izmanto echoDeployEnvironment(dev) metodi, 
+  tad neturpina darboties install-pip-deps - installPipRequirements solis
+==================================================================================
+
+def echoDeployEnvironment(String envronment) {
+    echo "Deploying to $environment"
+}
+def echoTestEnvironment(String environment) {
+    echo "Testing on $environment"
 }
 def stopGreetingsApp(String environment) {
     bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-$environment & EXIT /B 0"
@@ -110,3 +122,4 @@ def installNpmDependencies(String appDirectory) {
 def runGreetingsTests(String environment) {
     bat "cd course-js-api-framework && npm run greetings greetings_$environment"
 }
+*/
