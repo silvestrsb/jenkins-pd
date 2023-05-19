@@ -87,21 +87,25 @@ def echoDependencyInstall(String packageManager) {
     echo "Installing $packageManager dependencies"
 }
 def clonePythonGreetings() {
+    set +e
     bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
 }
 def displayDirectoryContent(String directory) {
     bat "cd $directory && dir"
 }
 def installPipRequirements(String directoryContainingRequirements, String requirementsTextFile) {
+    set +e
     bat "cd $directoryContainingRequirements && pip install -r $requirementsTextFile & EXIT /B 0"
 }
 def stopGreetingsApp(String environment) {
+    set +e
     bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-$environment & EXIT /B 0"
 }
 def startGreetingsApp(String environment, String port) {
     bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-dev -- --port 7001"
 }
 def cloneApiFramework() {
+    set +e
     bat "git clone https://github.com/mtararujs/course-js-api-framework & EXIT /B 0"
 }
 def installNpmDependencies(String appDirectory) {
