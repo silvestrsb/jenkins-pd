@@ -13,7 +13,7 @@ pipeline {
         stage('deploy-to-dev') {
             steps {
                 echo 'Deploying to dev'
-                bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
+                clonePythonGreetings()
                 bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-dev & EXIT /B 0"
                 bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-dev -- --port 7001"
             }
@@ -29,7 +29,7 @@ pipeline {
         stage('deploy-to-staging') {
             steps {
                 echo 'Deploying to staging'
-                bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
+                clonePythonGreetings()
                 bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-staging & EXIT /B 0"
                 bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-staging -- --port 7002"
             }
@@ -45,7 +45,7 @@ pipeline {
         stage('deploy-to-preprod') {
             steps {
                 echo 'Deploying to preprod'
-                bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
+                clonePythonGreetings()
                 bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-preprod & EXIT /B 0"
                 bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-preprod -- --port 7003"
             }
@@ -61,7 +61,7 @@ pipeline {
         stage('deploy-to-prod') {
             steps {
                 echo 'Deploying to prod'
-                bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
+                clonePythonGreetings()
                 bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-prod & EXIT /B 0"
                 bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-prod -- --port 7004"
             }
