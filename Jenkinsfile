@@ -93,7 +93,7 @@ def displayDirectoryContent(String directory) {
     bat "cd $directory && dir"
 }
 def installPipRequirements(String directoryContainingRequirements, String requirementsTextFile) {
-    bat "cd $directoryContainingRequirements && pip install -r $requirementsTextFile"
+    bat "cd $directoryContainingRequirements && pip install -r $requirementsTextFile & EXIT /B 0"
 }
 def stopGreetingsApp(String environment) {
     bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-$environment & EXIT /B 0"
