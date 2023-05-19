@@ -87,6 +87,7 @@ def echoDependencyInstall(String packageManager) {
     echo "Installing $packageManager dependencies"
 }
 def clonePythonGreetings() {
+    set +e
     bat(script: 'git clone https://github.com/mtararujs/python-greetings', returnStatus: true)
     //bat "git clone https://github.com/mtararujs/python-greetings & EXIT /B 0"
 }
