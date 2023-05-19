@@ -7,7 +7,7 @@ pipeline {
                 echoDependencyInstall("pip")
                 clonePythonGreetings()
                 displayDirectoryContent("python-greetings")
-                installPipRequirements("python-greetings", "requirements.txt")
+                //installPipRequirements("python-greetings", "requirements.txt")
             }
         }
         stage('deploy-to-dev') {
