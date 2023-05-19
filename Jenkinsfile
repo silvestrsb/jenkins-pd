@@ -12,9 +12,9 @@ pipeline {
         }
         stage('deploy-to-dev') {
             steps {
-                echo 'Deploying to dev'
+                echoDeployEnvironment("dev")
                 clonePythonGreetings()
-                bat "C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 delete greetings-app-dev & EXIT /B 0"
+                stopGreetingsApp("dev")
                 bat "cd python-greetings && C:\\Users\\Zenith\\AppData\\Roaming\\npm\\pm2 start app.py --name greetings-app-dev -- --port 7001"
             }
         }
